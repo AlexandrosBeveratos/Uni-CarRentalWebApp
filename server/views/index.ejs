@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Server Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/server.css" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Server Admin Page</h1>
+        <div class="card-wrapper">
+            <% if (session.isAuth) { %>
+                <div class="card">
+                    <h2>Manage Users</h2>
+                    <label>View all users <a href="/allUsers">here</a></label>
+                    <h2>Manage Registrations</h2>
+                    <label>View all registrations <a href="/inactiveUsers">here</a></label>
+                    <h2>Manage Reservations</h2>
+                    <label>View all reservations <a href="/reservations">here</a></label>
+                </div>
+            <% } else { %>
+             
+            <div class="card">
+                <h2>Enter Credentials</h2>
+                <form action="/login"  name="login_form" method="post">
+  
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter username" class="field" required>
+          
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Enter password" class="field" required>
+          
+                    <input type="submit" value="Log In" class="btn">
+                </form>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Server Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/server.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-wrapper">
+            <div class="card results">
+                <h1 class="center">All Users</h1>
+                <table id="data" class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">Username</th>
+                            <th class="center">Email</th>
+                            <th class="center">First Name</th>
+                            <th class="center">Last Name</th>
+                            <th class="center">Country</th>
+                            <th class="center">City</th>
+                            <th class="center">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (length> 0) { %>
+                            <% for (var count=0; count < users.length; count++) { %>
+                                <!--Checking if user has no role-->
+                                <% if (users[count].role == '' ) { %>
+                                    <tr>
+                                        <td>
+                                            <%= users[count].username %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].email %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].firstname %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].lastname %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].country %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].city %>
+                                        </td>
+                                        <td>
+                                            <%= users[count].role %>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            <% } %>
+                        <% } else {%>
+                                <tr>
+                                    <td>NO NEW USERS FOUND</td>
+                                </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <h2>Delete User by Username</h2>
+                <form action="/user/deleteByUsername" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter username" class="field" required>
+                    <input type="submit" value="DELETE" class="btn">
+                </form>
+                <h2>Accept User by Username</h2>
+                <form action="/user/accept" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter username" class="field" required>
+                    <label for="role">Role</label>
+                    <select name="role" class="field" required>
+                        <option selected disabled>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <input type="submit" value="ACCEPT" class="btn">
+                </form>
+            </div>
+        </div>
+        <div id="btn-container">
+            <a href="/" class="btn center" >MENU</a>
+        </div> 
+    </div>
+</body>

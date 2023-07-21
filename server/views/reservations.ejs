@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Server Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/server.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-wrapper">
+            <div class="card results">
+                <h1 class="center">All Reservations</h1>
+                <table id="data" class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">Username</th>
+                            <th class="center">Email</th>
+                            <th class="center">Phone</th>
+                            <th class="center">License Plate</th>
+                            <th class="center">From Date</th>
+                            <th class="center">To Date</th>
+                            <th class="center">Price</th>
+                            <th class="center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (length> 0) { %>
+                            <% for (var count=0; count < reservations.length; count++) { %>
+                                <tr>
+                                    <td>
+                                        <%= reservations[count].customer %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].email %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].phonenum %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].reservedvehicle %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].fromdate %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].todate %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].price %>
+                                    </td>
+                                    <td>
+                                        <%= reservations[count].status %>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        <% } else {%>
+                                <tr>
+                                    <td>NO RESERVATIONS FOUND</td>
+                                </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <h2>Update Reservation Status</h2>
+                <form action="/reservation/update" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter username" class="field" required>
+                    <label for="reservedvehicle">License Plate</label>
+                    <input type="text" name="reservedvehicle" placeholder="Enter the registration number" class="field" required>
+                    <label for="status">Reservation Status</label>
+                    <select name="status" class="field" required>
+                        <option selected disabled>Select Status</option>
+                        <option value="accepted">Accepted</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+            </div>
+        </div>
+        <div id="btn-container">
+            <a href="/" class="btn center" >MENU</a>
+        </div> 
+    </div>
+</body>
