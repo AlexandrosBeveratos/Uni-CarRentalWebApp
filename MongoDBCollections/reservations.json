@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "63ee8fd6c6f2b3ae8369f12b"
+  },
+  "customer": "CrazyAlexer",
+  "email": "alexandros.beveratos@gmail.com",
+  "phonenum": "69325235",
+  "reservedvehicle": "IKM 4935",
+  "fromdate": "2023-02-16",
+  "todate": "2023-02-24",
+  "price": "207",
+  "__v": 0,
+  "status": "rejected"
+},{
+  "_id": {
+    "$oid": "63f1f5b76b1d106134dd4106"
+  },
+  "customer": "johnsmith",
+  "email": "johnsmith@gmail.com",
+  "phonenum": "69325235",
+  "reservedvehicle": "IKM 4935",
+  "fromdate": "2023-02-23",
+  "todate": "2023-02-28",
+  "price": "138",
+  "__v": 0,
+  "status": "accepted"
+}]

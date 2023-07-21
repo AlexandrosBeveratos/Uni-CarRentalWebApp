@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "63dd5fcc2ceb8ee6029a0233"
+  },
+  "firstname": "Alexandros",
+  "lastname": "Beveratos",
+  "country": "Greece",
+  "city": "Athens",
+  "address": "Tripoleos 14, Glyfada",
+  "email": "alexandros.beveratos@gmail.com",
+  "username": "CrazyAlexer",
+  "password": "Alex21007!",
+  "__v": 0,
+  "role": "admin"
+},{
+  "_id": {
+    "$oid": "63e9180e00d92f8d6902a6f0"
+  },
+  "firstname": "Anna",
+  "lastname": "Beveratou",
+  "country": "Greece",
+  "city": "Anavyssos",
+  "address": "Τριπόλεως",
+  "email": "annabeveratou@gmail.com",
+  "username": "annabev",
+  "password": "Alex21007!",
+  "role": "user",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f1f51a6b1d106134dd40f6"
+  },
+  "firstname": "John",
+  "lastname": "Smith",
+  "country": "United Kingdom",
+  "city": "Beaufort",
+  "address": "12 Victoria St.",
+  "email": "johnsmith@gmail.com",
+  "username": "johnsmith",
+  "password": "Alex21007!",
+  "role": "user",
+  "__v": 0
+}]
