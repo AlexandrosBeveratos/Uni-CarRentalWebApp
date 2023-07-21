@@ -1,0 +1,358 @@
+.center {
+    text-align: center;
+}
+.card-wrapper {
+    margin: 0 auto;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+}
+
+.card {
+    color: white;
+    margin: 0 20px 40px;
+    padding: 20px 40px;
+    width: 460px;
+    box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background-color: rgba(50, 139, 240, 0.747);
+}
+.results {
+    width: fit-content;
+    min-height: 50vh;
+}
+
+.page-title{
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px rgb(78, 78, 78);
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fleet-card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.vehicle-card{
+    margin: 5px;
+    margin-top: 10px;
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: 0 0 calc(33.33% - 20px);
+    width: 100%;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    transition: box-shadow .3s;
+}
+.vehicle-card:hover{
+    opacity: 0.95;
+    border-color: lightblue;
+    box-shadow: 0 0 11px rgba(255, 255, 255, 0.568);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid ;
+    border-color: #53b2f1e8;
+    border-radius: 4px;
+    height: 70vh;
+    min-width: 140px;
+    max-width: 300px;
+    margin-right: 10px;
+    background-color: rgb(213, 219, 221);
+}
+
+/* Forms */
+form {
+    transition: opacity .15s ease;
+}
+
+form.loading {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+label {
+    margin: 0 0 2px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: var(--grey-medium);
+    display: block;
+}
+
+.field {
+    margin: 0 0 20px;
+    padding: 11px 16px 9px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: block;
+    background-color: white;
+    transition: border-color .15s ease;
+}
+.field:focus {
+    outline: none;
+}
+
+.invalid-field{
+    border-style: double;
+    border-color: red;
+}
+
+.filter{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn {
+    margin: 0 3px 24px;
+    padding: 11px 30px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    background: #00e08a;
+    transition: color .15s ease, background-color .15s ease;
+    box-shadow: 1px 1px rgb(63, 63, 63);
+}
+
+.btn:hover {
+    color: #f3f3f3c7;
+    background: #028161;
+    box-shadow: 1px 1px rgb(63, 63, 63);
+}
+
+.clr {
+    line-height: 20px;
+    margin-top: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 13px;
+    color: white;
+}
+
+/*Loader Animation*/
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 0.5s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: rgb(255, 88, 88);
+    font-weight: 700;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.valid {
+    color: rgb(27, 255, 6);
+    margin-left: 0.25rem;
+    height: 20px;
+    width: 20px;
+}
+
+.invalid {
+    color: rgb(255, 73, 73);
+    height: 20px;
+    width: 20px;
+    margin-left: 0.25rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgb(77, 77, 77);
+    color: #fff;
+    padding: 0.15rem;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.fleet-page{
+    display: flex;
+    flex-direction: row;
+}
+.image-container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.reserved{
+    opacity: 0.8;
+}
+.unoperational{
+    opacity: 0.6;
+}
+.bubble{
+    position: absolute;
+    left: 70px;
+    top: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 90px;
+    background-color: #61c7c7;
+    border-radius: 6px;
+    box-shadow: 1.5px 1.5px rgba(63, 63, 63, 0.568);
+    cursor: default;
+}
+/*Background Images */
+.peugeotbg{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.452)), url(../media/208bgdesktp.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 95vh;
+    width: 100%;
+}
+.highwaybg{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../media/hway.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 95vh;
+    width: 100%;
+}
+
+/* Tables */
+.table {
+    display: block;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 20px;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.table::-webkit-scrollbar {
+    width: 1em;
+}
+
+.table::-webkit-scrollbar-track {
+    background-color: #565578;
+    border-radius: 5px;
+}
+
+.table::-webkit-scrollbar-thumb {
+    background-color: #2e2c5c;
+    border-radius: 100vw;
+}
+
+.table thead tr {
+    background-color: #313063;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table tr {
+    border-bottom: 2px solid #dddddd;
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+}
+
+.table td {
+    color: #2a2b33;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #a9a9ac;
+}
+
+
+/*Tablet View*/
+@media (max-width: 969px) {
+    h1{
+    font-size: 22px;
+    }
+    .vehicle-card{
+        flex: 0 0 calc(50% - 20px);
+    }
+    .filter{
+        font-size: 12px;
+    }
+    .btn{
+        font-size: 12px;
+        line-height: 16px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .peugeotbg{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.452)), url(../media/208bgmobile.jpg);
+    }
+     
+}
+/*Smartphone view*/
+@media (max-width: 600px) {
+    h1{
+    font-size: 18px;
+    }
+    .vehicle-card{
+        flex: 0 0 100%;
+        max-width: fit-content;
+    }
+    .vehicle-card h1{
+        font-size: 18px;
+    }
+    .image-container img{
+        width: 250px;
+        height: 200px;
+    }
+    .btn{
+        font-size: 11px;
+        line-height: 12px;
+    } 
+    section{
+        justify-content: center;
+    }    
+}

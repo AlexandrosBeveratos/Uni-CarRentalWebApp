@@ -1,0 +1,94 @@
+nav{
+  display: flex;
+  flex-direction: row;
+  background: #5d7fb4;
+  height: 80px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+nav ul{
+  float: left;
+  margin-left: 5px;
+  height: 62px;
+  margin-bottom: 0px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 5px;
+  border-radius: 3px;
+  transition: background-color .4s ease-in-out;
+}
+
+nav a:hover,.active{
+  background: #f1ba06;
+}
+
+label.logo{
+  color: yellow;
+  font-size: 34px;
+  line-height: 80px;
+  padding: 0 10px;
+  font-style: italic;
+  font-family: fantasy;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#hambmenubtn{
+  float: right;
+}
+.checkbtn{
+  font-size: 10px;
+  line-height: 100px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 969px) {
+  label.logo{
+    font-size: 30px;
+    padding-left: 30px;
+  }
+  nav ul li a{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 780px) {
+  .checkbtn{
+    display: block;
+  }
+  nav ul{
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #3e5270;
+    top: 78px;
+    right: 800px;
+    text-align: center;
+    transition: all .4s;
+    z-index: 5;
+  }
+  nav ul li{
+    display: block;
+    margin: 20px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 22px;
+  }
+
+}
